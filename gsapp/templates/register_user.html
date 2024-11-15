@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<section class="testimonial py-5" id="testimonial">
+    <div class="container" style="border: 1px solid green;">
+        <div class="row">
+            <div class="col-md-4 py-5 bg-primary text-white text-center">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="{% static 'image/registration_bg.svg'%}" style="width:30%">
+                        <h2 class="py-3">Registration</h2>
+                        <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-5 border">
+                <h4 class="pb-4" style="color: green;">Please fill with your details</h4>
+                <form method="post" action="/sstd/">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input id="Full Name" name="name" placeholder="Full Name*" class="form-control" type="text" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <input type="text" class="form-control" id="inputEmail4" name="father_name" placeholder="Father Name*" required>
+                        </div>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input id="Mobile No." name="mobile_no" placeholder="Mobile No.*" class="form-control" required="required" type="number">
+                        </div>
+                        <div class="form-group col-md-6">
+                                  
+                            <select id="inputState" name="gender" class="form-control">
+                            <option selected>Gender ...</option>
+                            <option>MALE</option>
+                            <option>FEMALE</option>
+                            <option>OTHER</option>
+                            
+                            </select>
+                        </div>
+                                                
+                            <div class="form-group col-md-6">
+                              <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email*" required>
+                            </div>
+                         
+                        <div class="form-group col-md-12">
+                                  <textarea id="comment" name="address" cols="40" rows="5" class="form-control" placeholder="Your Address*" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                  <label class="form-check-label" for="invalidCheck2">
+                                    <small>By clicking Submit, you agree to our Terms & Conditions, Visitor Agreement and Privacy Policy.</small>
+                                  </label>
+                                </div>
+                              </div>
+                    
+                          </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
